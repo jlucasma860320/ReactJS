@@ -1,11 +1,11 @@
-import React from "react"
-import {ImSpinner9} from "react-icons/im"
-import estilos from "./Spinner.module.css"
+import React from "react";
+import { ImSpinner9 } from "react-icons/im";
+import styles from "./Spinner.module.css";
 
-export function Spinner(){
-
-    return (
-        <div className={estilos.spin}>
-            <ImSpinner9 className= {estilos.spinning} size={60}/>
-        </div>)
+export function Spinner() {
+  return (
+    <div className={styles.spinner}>
+      <ImSpinner9 className={styles.spinning} size={60} />
+    </div>
+  );
 }
