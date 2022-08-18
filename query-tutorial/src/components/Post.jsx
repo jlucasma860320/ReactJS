@@ -2,29 +2,34 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { getPostById } from "../api/posts";
+import { usePost } from "../hooks/posts";
 
 export default function Post({ postId }) {
-  const {data: post, error, isLoading} = useQuery(["posts",postId], () => getPostById(postId));
+  const {
+    data: post,
+    error,
+    isLoading,
+  } = usePost(postId);
+   // } = useQuery(["posts", postId], () => getPostById(post));
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [error, setError] = useState(null);
+  // const [post, setPost] = useState(null);
 
-  /*const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [post, setPost] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const data = await getPostById(postId);
-        setPost(data);
-        setError(null);
-      } catch (error) {
-        setError(error);
-        setPost(null);
-      }
-      setIsLoading(false);
-    };
-    fetchData();
-  }, [postId]);*/
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setIsLoading(true);
+  //     try {
+  //       const data = await getPostById(postId);
+  //       setPost(data);
+  //       setError(null);
+  //     } catch (error) {
+  //       setError(error);
+  //       setPost(null);
+  //     }
+  //     setIsLoading(false);
+  //   };
+  //   fetchData();
+  // }, [postId]);
 
   if (isLoading) {
     return (
